@@ -1,0 +1,74 @@
+.info-card {
+  margin-top: 1rem;
+}
+.info-card .info-title {
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 1rem;
+}
+.info-card .info-desc {
+  display: flex;
+  gap: 5rem;
+}
+.info-card .info-desc .info-section-left {
+  padding: 2rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.info-card .info-section-left .top-img {
+  width: 100%;
+  img {
+    border-radius: 5px;
+    width: 100%;
+  }
+}
+.info-card .info-section-left .bottom-img {
+  display: flex;
+  justify-content: space-around;
+}
+.info-card .info-section-left .img-block {
+  width: 20%;
+  img {
+    border-radius: 5px;
+    width: 100%;
+  }
+}
+.info-card .info-desc .info-section-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 50%;
+  p {
+    font-size: 1.6rem;
+  }
+}
+.setbg {
+  border-radius: 5px;
+  border: solid 2px red;
+  padding: 0.2rem;
+}
+
+@media (max-width: 700px) {
+  .info-card .info-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+  }
+  .info-card .info-desc .info-section-left {
+    width: 100%;
+  }
+  .info-card .info-desc .info-section-right {
+    padding: 1rem;
+    width: 100%;
+  
+  }
+}
+
+@media (max-width: 400px) {
+    .info-card .info-desc .info-section-left {
+        padding: 0rem;
+      }
+}

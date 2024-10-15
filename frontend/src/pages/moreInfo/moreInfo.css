@@ -1,0 +1,104 @@
+.more-info {
+  margin-top: 6.4rem;
+  padding: 1rem 5rem;
+}
+.more-info .village-head {
+  box-shadow: 0px 0px 2px rgb(74, 74, 74);
+  background-color: rgb(245, 245, 245);
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.more-info .village-head .head-image {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 10rem;
+  img {
+    width: 100%;
+  }
+  p {
+    font-size: 1.4rem;
+  }
+}
+.head-desc {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+.head-name,
+.contact-no {
+  text-align: center;
+  h3 {
+    font-size: 2rem;
+  }
+  p {
+    margin-top: 0.5rem;
+    font-size: 1.6rem;
+  }
+}
+.more-info .village-details {
+  display: flex;
+  gap: 2rem;
+}
+
+.more-info .village-details .left,
+.right {
+  h1 {
+    margin: 2rem 0rem;
+  }
+  text-align: center;
+  padding: 1rem;
+  width: 50%;
+}
+.more-info .village-details .details {
+  margin: 0rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+}
+.more-info .village-details .details:nth-child(even) {
+  background-color: rgb(255, 255, 255);
+}
+.more-info .village-details .details:nth-child(odd) {
+  background-color: rgb(244, 244, 244);
+}
+
+@media (max-width: 700px) {
+  .more-info {
+    padding: 1rem;
+  }
+  .more-info .village-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+  }
+  .more-info .village-details .left,
+.right {
+  h1 {
+    margin: 2rem 0rem;
+  }
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+}
+}
+
+@media (max-width: 400px) {
+  .more-info {
+    margin-top: 1rem;
+    padding: 0rem;
+  }
+  .head-desc {
+    flex-direction: column;
+  }
+  .more-info .village-details .details {
+    margin: 0rem 0rem;
+    padding: 1rem ;
+
+  }
+}
