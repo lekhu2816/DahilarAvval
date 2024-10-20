@@ -1,6 +1,7 @@
 import { MailtrapClient } from "mailtrap"
 
-const TOKEN = "2b0f1459c9c15ebb7067e4d13aadea44";
+const TOKEN = process.env.MAILTRAP_TOKEN;
+
 
 const client = new MailtrapClient({
   token: TOKEN,
@@ -245,6 +246,112 @@ const sendWelcomeMail = async (userEmail, userName) => {
         .then(console.log, console.error);
 };
 
+
+const sendResetPasswordEmail = async (userEmail, resetURL, username) => {
+    const recipients = [
+        {
+            email: userEmail,
+        }
+    ];
+
+
+    // Reset password email HTML template with username and reset URL dynamically inserted
+    const htmlTemplate = `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+          }
+          .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          }
+          .header {
+            text-align: center;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 8px 8px 0 0;
+          }
+          .content {
+            padding: 20px;
+          }
+          .content p {
+            font-size: 16px;
+            color: #333333;
+            line-height: 1.5;
+          }
+          .button-container {
+            text-align: center;
+            margin-top: 20px;
+          }
+          .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+          }
+          .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #888888;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="email-container">
+          <div class="header">
+            <h2>Reset Your Password</h2>
+          </div>
+          <div class="content">
+            <p>Hi ${username},</p>
+            <p>
+              We received a request to reset your password. Click the button below to reset it. If you did not request a password reset, you can safely ignore this email.
+            </p>
+            <div class="button-container">
+              <a href="${resetURL}" class="button">Reset Password</a>
+            </div>
+            <p>
+              Please note that this link will expire in 1 hour. If the button doesn't work, you can copy and paste the following link into your browser:
+            </p>
+            <p><a href="${resetURL}">${resetURL}</a></p>
+            <p>Thank you,</p>
+            <p>The Team</p>
+          </div>
+          <div class="footer">
+            <p>If you have any questions, feel free to contact our support team.</p>
+          </div>
+        </div>
+      </body>
+    </html>
+    `;
+
+    client
+    .send({
+        from: sender, 
+        to: recipients,
+        subject: "Your Email Verification Code",
+        html: htmlTemplate,  // Use the HTML template here
+        category: "OTP Verification",
+    })
+    .then(console.log, console.error);
+};
+
 // Example usage:
 
-export {sendVerificationMail,sendWelcomeMail};
+export {sendVerificationMail,sendWelcomeMail,sendResetPasswordEmail};
