@@ -201,6 +201,7 @@ const logout = async (req, res) => {
 };
 
 //----------------------------forget password-------------------------------------//
+
 const forgetPassword=async(req,res)=>{
  const {email}=req.body;
 
