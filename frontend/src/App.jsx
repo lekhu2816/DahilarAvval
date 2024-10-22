@@ -9,6 +9,8 @@ import MoreInfo from "./pages/moreInfo/moreInfo";
 import Architecture from "./pages/architecture/architecture";
 import Event from "./pages/event/event";
 import Nature from "./pages/nature/nature";
+import Login from "./pages/login/login";
+import Signup from "./pages/signup/signup";
 function App() {
   const { pathname } = useLocation();
 
@@ -26,6 +28,8 @@ function App() {
         <Route path="/architecture" element={<Architecture />} />
         <Route path="/event" element={<Event />} />
         <Route path="/nature" element={<Nature/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/signup" element={<Signup/>} />
       </Routes>
       <Footer />
     </>
