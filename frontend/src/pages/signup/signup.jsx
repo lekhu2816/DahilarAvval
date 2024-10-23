@@ -9,6 +9,7 @@ const Signup = () => {
   const onFormSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+    navigate('/verify-email')
   };
   return (
     <div className="signup-page">

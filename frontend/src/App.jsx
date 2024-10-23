@@ -11,6 +11,9 @@ import Event from "./pages/event/event";
 import Nature from "./pages/nature/nature";
 import Login from "./pages/login/login";
 import Signup from "./pages/signup/signup";
+import VerifyEmail from "./pages/verifyEmail/verifyEmail";
+import ForgetPassword from "./pages/forgetPassword/forgetPassword";
+
 function App() {
   const { pathname } = useLocation();
 
@@ -30,6 +33,8 @@ function App() {
         <Route path="/nature" element={<Nature/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<Signup/>} />
+        <Route path="/verify-email" element={<VerifyEmail/>} />
+        <Route path="/forget-password" element={<ForgetPassword/>} />
       </Routes>
       <Footer />
     </>

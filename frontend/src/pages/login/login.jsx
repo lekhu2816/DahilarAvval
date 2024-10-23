@@ -29,7 +29,7 @@ const Login = () => {
               <i className="fa-regular fa-eye"></i>
             </div>
             <div className="forget-password">
-              <p>forget password?</p>
+              <p onClick={()=>navigate('/forget-password')}>forget password?</p>
             </div>
             <button>{!loading?<>Create Account</>:<div className="loading-btn">Please Wait<Loader/></div>}</button>
           </form>

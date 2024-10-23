@@ -1,0 +1,70 @@
+.verify-email{
+margin-top: 6.4rem;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 80vh;
+}
+.verify-email .verify-container{
+    width: 30%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+   box-shadow: 0px 0px 5px rgb(104, 104, 104);
+   border-radius: 5px;
+}
+.verify-email h1{
+  font-size: 2.4rem;
+}
+.verify-email p{
+  font-size: 1.4rem;
+  color: rgb(71, 71, 71);
+}
+ .verify-email .verify-container form{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+ }
+ .verify-email .verify-container .input-container{
+  input{
+    text-align: center;
+    font-size: 2.4rem;
+    width: 4rem;
+    aspect-ratio: 1;
+  
+  }
+ }
+ .verify-email .verify-button{
+  width: 100%;
+  padding: 1rem;
+  background-color: #F5004F;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+ }
+ .verify-email .resend-otp{
+  font-size: 1.4rem;
+  span{
+    color: red;
+    cursor: pointer;
+  }
+ }
+
+
+ @media (max-width:700px) {
+  .verify-email .verify-container{
+    width: 60%;
+  }
+ }
+ @media (max-width:400px) {
+  .verify-email{
+    margin-top: 0rem;
+    height: 40vh;
+  }
+  .verify-email .verify-container{
+    width: 100%;
+  }
+ }
