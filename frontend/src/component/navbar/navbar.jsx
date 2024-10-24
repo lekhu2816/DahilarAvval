@@ -45,7 +45,7 @@ const Navbar = () => {
         <h1>27°C</h1>
         <p>Clear {icon}</p>
       </div>
-      <button className="donate-button">Donate</button>
+      <button onClick={()=>{navigate('/donate')}} className="donate-button">Donate</button>
       <button className="login-button" onClick={()=>navigate('/login')}>Login</button>
       </div>
 

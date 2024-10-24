@@ -13,7 +13,7 @@ import Login from "./pages/login/login";
 import Signup from "./pages/signup/signup";
 import VerifyEmail from "./pages/verifyEmail/verifyEmail";
 import ForgetPassword from "./pages/forgetPassword/forgetPassword";
-
+import Donate from "./pages/donate/donate";
 function App() {
   const { pathname } = useLocation();
 
@@ -35,6 +35,7 @@ function App() {
         <Route path="/signup" element={<Signup/>} />
         <Route path="/verify-email" element={<VerifyEmail/>} />
         <Route path="/forget-password" element={<ForgetPassword/>} />
+        <Route path="/donate" element={<Donate/>} />
       </Routes>
       <Footer />
     </>
